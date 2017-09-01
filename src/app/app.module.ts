@@ -1,10 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {HttpModule} from '@angular/http';
 
-import { FormsModule } from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 
-import { AppComponent } from './app.component';
-import { UserComponent } from './components/user/user.component';
+import {AppComponent} from './app.component';
+import {UserComponent} from './components/user/user.component';
+
+import {DataService} from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -13,9 +16,11 @@ import { UserComponent } from './components/user/user.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
