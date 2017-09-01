@@ -33,6 +33,16 @@ export class UserComponent implements OnInit {
     this.hobbies.push('New Hobby');
   }
 
+  addHobby(hobby) {
+    console.log(hobby);
+    this.hobbies.unshift(hobby);
+    return false;
+  }
+
+  deleteHobby(hobby) {
+    this.hobbies.splice(this.hobbies.indexOf(hobby), 1);
+  }
+
 }
 
 interface  Address {
